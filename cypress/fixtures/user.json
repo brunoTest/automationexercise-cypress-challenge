@@ -1,0 +1,10 @@
+{
+  "loginEmail": "asd3@gmail.com",
+  "loginPassword": "123",
+  "mobileNumber": "0987654321",
+  "cardName": "Test CardHolder",
+  "cardNumber": "4111111111111111",
+  "cardCVC": "123",
+  "cardExpiryMonth": "12",
+  "cardExpiryYear": "2028"
+}
