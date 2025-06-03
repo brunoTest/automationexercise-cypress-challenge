@@ -4,6 +4,20 @@ const fs = require('node:fs'); // Node.js 'fs' module for file system operations
 const path = require('node:path'); // Node.js 'path' module for path manipulation (modern import)
 
 module.exports = defineConfig({
+  // --- INICIO DE LA CONFIGURACIÓN DE MOCHAWESOME ---
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    reportDir: 'cypress/reports', // Directorio donde se guardarán los reportes
+    charts: true,                 // Muestra gráficos en el reporte
+    reportPageTitle: 'Reporte de Pruebas E2E - Automation Exercise', // Título de la página HTML del reporte
+    embeddedScreenshots: true,    // Incrusta las capturas de pantalla en el reporte HTML (para fallos)
+    inlineAssets: true,           // Incrusta todos los assets (CSS, JS) en el HTML para que sea un solo archivo portable
+    overwrite: false,             // Si es true, sobrescribe el reporte anterior. Si es false, crea uno nuevo con timestamp.
+    html: true,                   // Generar reporte HTML
+    json: true                    // Generar reporte JSON (puede ser útil para integraciones o merging)
+  },
+  // --- FIN DE LA CONFIGURACIÓN DE MOCHAWESOME ---
+
   e2e: {
     baseUrl: 'https://www.automationexercise.com',
 
@@ -44,7 +58,12 @@ module.exports = defineConfig({
         // myOtherTask(arg) { /* ... */ return someResult; }
       });
       // --- End of Task Registration ---
-      return config;
+
+      // --- REGISTRAR PLUGIN DE MOCHAWESOME REPORTER ---
+      require('cypress-mochawesome-reporter/plugin')(on);
+      // --- FIN DEL REGISTRO DEL PLUGIN ---
+
+      return config; // Es importante retornar el objeto config
     },
     // Global E2E test configurations:
     viewportWidth: 1280,
