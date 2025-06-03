@@ -14,4 +14,5 @@ pids
 cypress/screenshots/
 cypress/videos/
 cypress/downloads/
+cypress/reports/
 cypress.env.json # Si usas variables de entorno sensibles aquí
