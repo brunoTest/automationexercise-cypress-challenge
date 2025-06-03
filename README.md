@@ -1,6 +1,8 @@
 # AutomationExercise.com - Cypress E2E Test Project
 
-This project contains an End-to-End (E2E) automated test scenario for the website [https://www.automationexercise.com](https://www.automationexercise.com), developed as part of a technical challenge. The primary scenario covers user login, adding a product to the cart, and completing the checkout process including payment confirmation and an attempt to download the invoice.
+This project contains an End-to-End (E2E) automated test scenario for the website `https://www.automationexercise.com`, developed as part of a technical challenge.
+
+The primary scenario meticulously validates a complete user journey: it starts with user login, proceeds to adding a product to the cart, and guides through the entire checkout process including payment confirmation. A key part of the test involves successfully downloading the generated invoice and then verifying the accuracy of its content. The scenario concludes by navigating back to the homepage and confirming this return, ensuring the flow completion.
 
 ## 🤖 Technology Stack
 
